@@ -1,0 +1,482 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #1a1a1a;
+}
+
+/* Навигация */
+.menu{
+    background-color: #262626;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    top: 0;
+
+}
+
+.links{
+    margin-left: 5%;
+}
+
+.menu li{
+    display: inline-block;
+    left: 4%;
+    margin-right: 2vw;
+}
+
+.to_log_btn,
+.log_out_btn,
+.cancel{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFF;
+    
+    padding: 10px;
+    text-align: center;
+    border-radius: 13px;
+}
+
+.to_log_btn{
+    background-color: #0575BD;
+}
+
+.log_out_btn{
+    display: none;
+    color: #a0a0a0;
+    border: 2px solid #555;
+    margin-right: 4%;
+}
+
+.to_main_btn,
+.to_basket_btn{
+    display: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFF;
+}
+
+/* Список категорий */
+.select_category {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    width: 250px;
+    height: 40px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFF;
+}
+  
+.option {
+    padding: 0 30px 0 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    background: #333;
+    border-top: #222 solid 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+    order: 2;
+    z-index: 1;
+    transition: background .4s ease-in-out;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    
+}
+  
+.option::first-letter {
+    text-transform: capitalize;
+}
+
+.option:hover {
+    background: #0575BD;
+}
+  
+.select_category:focus .option {
+    position: relative;
+    pointer-events: all;
+}
+  
+.select_opt {
+    opacity: 0;
+    position: absolute;
+}
+  
+.select_opt:checked + .option {
+    order: 1;
+    z-index: 2;
+    background: #262626;
+    border: 1px solid #3b3b3b;
+    position: relative;
+}
+  
+.select_opt:checked + .option:after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 2.5px);
+    pointer-events: none;
+    z-index: 3;
+}
+  
+.select_opt:checked + .option:before {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    content: '';
+    background: #3b3b3b;
+}
+
+/* Формы авторизации */
+.all_forms{
+    display: table;
+    margin: 0 auto;
+}
+
+.form_data{
+    margin-left: 15%;
+}
+
+.login_form, 
+.registration_form,
+.recovery_form{
+    display: none;
+    margin-top: 25vh;
+    min-width: 250px;
+    width: 25vw;
+    background-color: #262626;
+    border: 1px solid #0575BD;
+    border-radius: 13px;
+    padding: 2vh;
+}
+
+.form_header{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 30px;
+
+    text-align: center;
+    color: #FFF;
+}
+
+.user_data li{
+    display: inline-block;
+    margin-right: 2vw;
+    margin-left: 2vw;
+}
+
+.label{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.data_field{
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 13px;
+    border: 1px solid #181818;
+    background-color: #242424;
+    padding: 2px;
+    padding-left: 4px;
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+.data_field:focus{
+    color: #fff;
+    background-color: #242424;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #0077ff56;
+}
+
+.form_btn{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login_btn,
+.reg_btn,
+.recover_btn{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 7px;
+
+    background-color: #0575BD;
+    border: 2px solid #0575BD;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.to_other_form{
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.to_other_form li{
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+.to_other_form_btn{
+    background-color: #262626;
+    border: 0px;
+
+    color: #0096f3;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Навигация по категориям */
+
+
+/* Карта товара */
+
+.product{
+    cursor: pointer;
+}
+
+.item{
+    background-color: #111111;
+    width: 250px;
+    height: 300px;
+    margin-top: 2%;
+    margin-left: 5%;
+    display: inline-table;
+
+    border-radius: 13px;
+    border: 0.5px solid #2c2c2c;
+}
+
+.item_img{
+    width: 100%;
+    height: 150px;
+}
+
+.item_img img{
+    width: 250px;
+    height: 150px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+}
+
+.item_info{
+    width: 240px;
+    height: 90px;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.item_header{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 2vh;
+    margin-left: 2%;
+}
+
+.about_item{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    margin-top: 1vh;
+    margin-left: 2%;
+}
+
+.item_img .price_conteiner{
+    margin-left: 5;
+    margin-top: 5;
+    padding: 4px;
+    
+    border-top-left-radius: 13px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
+    position: absolute;
+	background: linear-gradient(45deg, #309435, #036800);
+	background-size: 400% 400%;
+	animation: price_gradient 7s ease infinite;
+	transform: translate3d(0, 0, 0);
+}
+
+.item_price{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.basket_btn_text{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.item .basket_btn{
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 85px;
+}
+
+#basket_btn{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 13px;
+	background: linear-gradient(45deg, #2c2c2c, #0575BD);
+	background-size: 400% 400%;
+	animation: btn_gradient 10s ease infinite;
+	transform: translate3d(0, 0, 0);
+}
+ 
+@keyframes btn_gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes price_gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Страница продукта */
+.about_product_page{
+    margin-top: 5vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.title_product{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    padding-bottom: 2vh;
+}
+
+.picture{
+    width: 100%;
+    min-height: 50vh;
+    max-height: 50vh;
+    text-align: center;
+}
+
+.product_picture_selector{
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+}
+
+.product_picture_selector li{
+    display: inline-block;
+    padding-left: 40px;
+}
+
+.to_left_arrow,
+.to_right_arrow{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.product_img{
+    width: 30vw;
+    height: 40vh;
+}
+
+.brand_of_product{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.description_of_product{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.mark_product{
+    color: #fffb00;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.product_page_basket_btn{
+    width: 20vw;
+    min-width: 100px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+
+/* Слайдер */
