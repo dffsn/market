@@ -67,13 +67,55 @@ body{
     color: #FFF;
 }
 
+.search_cont{
+    display: none;
+    height: 100%;
+}
+
+.search{
+    color: #fff;
+    font-size: 14px;
+    margin-top: 10px;
+    border: 1px solid #181818;
+    background: #333;
+    border-top: #222 solid 1px;
+    padding: 5px;
+    padding-left: 4px;
+    height: 50%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+}
+
+.search:focus{
+    color: #fff;
+    background-color: #242424;
+    outline: 0;
+}
+
+.to_search{
+    margin-top: 10px;
+    height: 50%;
+    border: 1px solid #181818;
+    background: #333;
+    border-top: #222 solid 1px;
+    padding: 5px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+
 /* Список категорий */
 .select_category {
     display: none;
     flex-direction: column;
     position: relative;
     width: 250px;
-    height: 40px;
+    height: 30px;
 
     font-family: 'Montserrat';
     font-style: normal;
@@ -85,7 +127,7 @@ body{
   
 .option {
     padding: 0 30px 0 10px;
-    min-height: 40px;
+    min-height: 30px;
     display: flex;
     align-items: center;
     background: #333;
@@ -146,8 +188,8 @@ body{
 .select_opt:checked + .option:before {
     position: absolute;
     right: 0;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     content: '';
     background: #3b3b3b;
 }
@@ -262,11 +304,7 @@ body{
     cursor: pointer;
 }
 
-/* Навигация по категориям */
-
-
 /* Карта товара */
-
 .product{
     cursor: pointer;
 }
@@ -281,6 +319,29 @@ body{
 
     border-radius: 13px;
     border: 0.5px solid #2c2c2c;
+}
+
+.basket_item{
+    background-color: #111111;
+    width: 250px;
+    margin-top: 2%;
+    margin-left: 5%;
+    display: inline-table;
+
+    border-radius: 13px;
+    border: 0.5px solid #2c2c2c;
+}
+
+.delete_btn{
+    width: 60px;
+    margin-bottom: 10px;
+    margin-left: 160px;
+    padding: 10px;
+    border-radius: 13px;
+	background: linear-gradient(45deg, #2c2c2c, #bd0505);
+	background-size: 400% 400%;
+	animation: btn_gradient 10s ease infinite;
+	transform: translate3d(0, 0, 0);
 }
 
 .item_img{
@@ -346,7 +407,7 @@ body{
     font-size: 12px;
 }
 
-.basket_btn_text{
+.basket_btn_text, .delete_btn_text{
     color: #fff;
     font-family: 'Montserrat';
     font-style: normal;
@@ -469,6 +530,7 @@ body{
 }
 
 .product_page_basket_btn{
+    padding-top: 25px;
     width: 20vw;
     min-width: 100px;
     text-align: center;
@@ -478,5 +540,23 @@ body{
     margin: auto;
 }
 
+.search_failed{
+    color: #FFF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
 
-/* Слайдер */
+    display: table;
+    margin: 40vh auto;
+}
+
+.quantity_product{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
