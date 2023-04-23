@@ -7,14 +7,14 @@ let users = [
         "password" : "admin_test",
         "key_code" : "test_admin",
         "is_admin"  : "1",
-        "user_id" : 0
+        "user_id" : 1
     },
     {
         "login" : "user@mail.ru",
         "password" : "user_test",
         "key_code" : "test_user",
         "is_admin"  : "0",
-        "user_id" : 1
+        "user_id" : 2
     }
 ];
 
@@ -239,11 +239,11 @@ function add_product_in_basket_html(all_products){
     let i = 0;
     for (const product of all_products){
         content.innerHTML += `
-        <div class="item" >      
+        <div class="basket_item" >      
             <div class="product" id="${i}">
                 <div class="item_info">
                     <p class="item_header">${product.title}</p>
-                    <p class="about_item">${product.description}</p>
+                    <p class="about_item">Количество: ${product.quantity}</p>
                 </div>
             </div>
             <div class="delete_btn" id="${i}">
@@ -258,7 +258,7 @@ function add_product_in_basket_html(all_products){
     content.innerHTML += `
     <div class="product_page_basket_btn">
             <div id="basket_btn">
-                    <a href="#" class="basket_btn_text">Купить за <span class="price_product">${total_price}$</span></a>
+                    <a href="#" class="basket_btn_text">К оплате <span class="price_product">${total_price}$</span></a>
             </div>
     </div>`;
     // Слушатель нажатия на карточку продукта
@@ -280,15 +280,13 @@ function add_product_in_basket_html(all_products){
 }
 
 function delete_product(click_on_delete_id){
-
     basket.splice(click_on_delete_id, 1);
     console.log(basket);
     add_basket();
-
 }
 
 // Открытие страницы продукта
-function add_info_about_product(product_id,all_products){
+function add_info_about_product(product_id){
     let about_product_page = document.querySelector(".about_product_page");
     fetch('https://dummyjson.com/products/' + product_id)
     .then(response => response.json())
@@ -351,5 +349,3 @@ function input_search(){
     .then(res => res.json())
     .then((json) =>add_products(json));
 }
-
-// Слайдер
