@@ -304,11 +304,7 @@ body{
     cursor: pointer;
 }
 
-/* Навигация по категориям */
-
-
 /* Карта товара */
-
 .product{
     cursor: pointer;
 }
@@ -323,6 +319,29 @@ body{
 
     border-radius: 13px;
     border: 0.5px solid #2c2c2c;
+}
+
+.basket_item{
+    background-color: #111111;
+    width: 250px;
+    margin-top: 2%;
+    margin-left: 5%;
+    display: inline-table;
+
+    border-radius: 13px;
+    border: 0.5px solid #2c2c2c;
+}
+
+.delete_btn{
+    width: 60px;
+    margin-bottom: 10px;
+    margin-left: 160px;
+    padding: 10px;
+    border-radius: 13px;
+	background: linear-gradient(45deg, #2c2c2c, #bd0505);
+	background-size: 400% 400%;
+	animation: btn_gradient 10s ease infinite;
+	transform: translate3d(0, 0, 0);
 }
 
 .item_img{
@@ -388,7 +407,7 @@ body{
     font-size: 12px;
 }
 
-.basket_btn_text{
+.basket_btn_text, .delete_btn_text{
     color: #fff;
     font-family: 'Montserrat';
     font-style: normal;
@@ -511,6 +530,7 @@ body{
 }
 
 .product_page_basket_btn{
+    padding-top: 25px;
     width: 20vw;
     min-width: 100px;
     text-align: center;
@@ -540,4 +560,3 @@ body{
 
     margin-bottom: 10px;
 }
-/* Слайдер */
